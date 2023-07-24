@@ -1,10 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import React from "react";
+import { render } from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// join([", "])
+
+// render(
+//   <React.StrictMode>
+//     {/* <Participants list={membersData} /> */}
+//     <NumberList />
+//     <Clock />
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
