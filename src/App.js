@@ -29,9 +29,9 @@ import { HiddenList } from "./components/HiddenList/HiddenList.js";
 //   <>
 //     {<ListView />}
 //     {/* 1 */}
-//     {/* <ProgressBar width={`${query}%`} /> */}
+//     {/* <Progressbar width={`${query}%`} /> */}
 //     {/* 2 */}
-//     {/* <ProgressBar /> */}
+//     {/* <Progressbar /> */}
 //     {/* <NumberList /> */}
 //     {/* <InputPassword />
 //     <Square />
