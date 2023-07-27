@@ -24,7 +24,7 @@ export const ControlledInput = (props) => {
         style={{ backgroundColor: color }}
       />
       <p>You've entered {firstName.length} characters.</p>
-      <button type="submit">Send</button>
+      {/* <button type="submit">Send</button> */}
     </form>
   );
 };

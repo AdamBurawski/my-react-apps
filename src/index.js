@@ -15,6 +15,9 @@ import { render } from "react-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./styles/HiddenList.css";
+import "./styles/Progressbar.css";
+import "./styles/AgeGuesser.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

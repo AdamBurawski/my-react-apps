@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 const FormWrapper = styled.div`
   position: relative;
-  top: 200px;
-  left: 50vw;
-  transform: translate(-50%, -50%);
+  top: 20px;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -27,10 +25,12 @@ const FormWrapper = styled.div`
 
 const LoginCorrectBox = styled.div`
   position: absolute;
-  top: -110px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100px;
   display: flex;
   border-radius: 25px;
-  width: 100px;
+  width: 110px;
   height: 100px;
   background-color: green;
   justify-content: center;
@@ -92,7 +92,7 @@ export const LoginForm = (props) => {
 
   const [visibilityReg, setVisibilityReg] = useState("none");
 
-  const [visibilityLog, setVisibilityLog] = useState("block");
+  const [visibilityLog, setVisibilityLog] = useState("flex");
 
   const [visibilityOn, setVisibilityOn] = useState("false");
 
@@ -114,11 +114,11 @@ export const LoginForm = (props) => {
       console.log(person);
       if (person.email === "a@b.c" && person.password === "1234") {
         console.log("green");
-        setLogged("block");
+        setLogged("flex");
         setBgColor("green");
         setLoginTxt("Logged correctly");
       } else {
-        setLogged("block");
+        setLogged("flex");
         setBgColor("red");
         setLoginTxt("Logged incorrectly");
         console.log("red");
@@ -171,7 +171,7 @@ export const LoginForm = (props) => {
     e.preventDefault();
 
     if (visibilityOn === "false") {
-      setVisibilityReg("block");
+      setVisibilityReg("flex");
       setVisibilityLog("none");
       setLogged("none");
       setVisibilityOn("true");
@@ -181,7 +181,7 @@ export const LoginForm = (props) => {
     e.preventDefault();
     if (visibilityOn === "true") {
       setVisibilityReg("none");
-      setVisibilityLog("block");
+      setVisibilityLog("flex");
       //   setLogged("none");
       setVisibilityOn("false");
     }

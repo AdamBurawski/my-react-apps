@@ -1,11 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ListElement } from "./ListElement";
 
 export const ListView = (props) => {
   const [users, setUsers] = useState(props.list);
 
-  const removeItem = (username) => {
-    setUsers((users) => users.filter((one) => one.username !== username));
+  const changeUser = () => {
+    (async () => {
+      try {
+        // setError(null);
+        const res = await fetch("https://randomuser.me/api/");
+        const data = await res.json();
+        setUsers(data.results); // Update the state with the fetched users list
+      } catch (e) {
+        // setError("Błąd wczytywania");
+      }
+    })();
   };
 
   const list = [...users]
@@ -14,7 +23,7 @@ export const ListView = (props) => {
       <ListElement
         user={userObj}
         key={userObj.email}
-        onRemoveItem={removeItem}
+        onRemoveItem={changeUser}
       />
     ));
 

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+section.projects-list {
+  position: relative;
+  z-index: 10;
+  padding: 50px 0;
+}
+section.projects-list .projects-list-container {
+  width: 90%;
+  margin: 0 auto;
+}
+section.projects-list .projects-list-container .projects.txt-container {
+  border-left: 5px solid white;
+}
+section.projects-list .projects-list-container .projects.txt-container h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4b7e80;
+}
+section.projects-list .projects-list-container h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 70px;
+  color: #4b7e80;
+}
+section.projects-list .projects-list-container .list-element {
+  padding: 30px;
+}
+section.projects-list .projects-list-container .list-element:nth-child(odd) {
+  background-color: #4b7e80;
+}
+section.projects-list .projects-list-container .list-element:nth-child(odd) div ul li {
+  color: white;
+}
+section.projects-list .projects-list-container .list-element:nth-child(even) div ul li {
+  color: #4b7e80;
+}
+section.projects-list .projects-list-container .list-element .page-content {
+  text-align: center;
+}
+section.projects-list .projects-list-container .list-element .page-content h2 {
+  margin: 40px 0;
+  display: inline-block;
+  text-align: left !important;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul {
+  border-bottom: 1px solid lightgray;
+  padding-inline-start: unset;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li {
+  display: flex;
+  justify-content: center;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong {
+  cursor: pointer;
+  font-size: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong::before {
+  content: "⇨";
+  margin-right: 20px;
+  display: inline-block;
+  transform: rotate(40deg);
+  font-weight: 500;
+  position: absolute;
+  right: 15%;
+  text-align: center;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong.open::before {
+  transform: rotate(90deg);
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(even) {
+  height: 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition-delay: 1s;
+  transition: visibility 0s, opacity 0.4s linear;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(even).open {
+  display: inline;
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  text-decoration: none;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(even).open span {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  font-weight: 600;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.waves::before {
+  content: "";
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background: linear-gradient(45deg, #ffffff, white);
+  border-radius: 0% 350% 350% 0%;
+  transform: scale(1.5);
+}
+.waves::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100vh;
+  z-index: 11;
+  background: linear-gradient(45deg, #ffffff, white);
+  border-radius: 0% 350% 350% 0%;
+  transform: scale(1.5) rotate(180deg);
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: orange;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.4s;
+  border: 1px solid white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: white;
+  color: orange;
+  border: 1px solid orange;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=hiddenList.css.map */

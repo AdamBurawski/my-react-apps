@@ -13,10 +13,12 @@ const Picture = styled.div`
 const PersonELement = styled.li`
   display: flex;
   align-items: center;
+  justify-content: space-evenly !important;
   border: 1px solid whitesmoke;
   width: 400px;
   cursor: pointer;
   transition: 0.4s;
+  border-radius: 10px;
   &:hover {
     background-color: yellow;
   }

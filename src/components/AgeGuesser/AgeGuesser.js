@@ -16,7 +16,7 @@ export const AgeGuesser = (props) => {
 
   return (
     <form onSubmit={sendForm}>
-      <label htmlFor="">
+      <label className="age-guesser-label" htmlFor="">
         Podaj imię: <br />
         <input
           type="text"

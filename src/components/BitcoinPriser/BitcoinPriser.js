@@ -29,7 +29,10 @@ export const BitcoinPriser = (props) => {
 
   return (
     <>
-      <p>Aktualna cena Bitcoina to: {btcPrice} $</p>
+      <p>
+        <strong>Aktualna cena Bitcoina to: </strong>
+        <h3>{btcPrice} $</h3>
+      </p>
     </>
   );
 };
