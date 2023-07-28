@@ -22,36 +22,7 @@ import { BitcoinPriser } from "./components/BitcoinPriser/BitcoinPriser";
 import { FakeUsersList } from "./components/FakeUsersList/FakeUsersList";
 import { HiddenList } from "./components/HiddenList/HiddenList.js";
 
-//   **1
-// const query = prompt("podaj szerokość: ");
-
-// const App = (props) => (
-//   <>
-//     {<ListView />}
-//     {/* 1 */}
-//     {/* <Progressbar width={`${query}%`} /> */}
-//     {/* 2 */}
-//     {/* <Progressbar /> */}
-//     {/* <NumberList /> */}
-//     {/* <InputPassword />
-//     <Square />
-//     <Square />
-//     <Square /> */}
-
-//     {/* <Clock /> */}
-//   </>
-//   // const [show, setShow] = useState(true);
-
-//   // setTimeout(() => {
-//   //   setShow(false);
-//   // }, 50000);
-
-//   // return show ? <Clock /> : null;
-// );
-
-// export default App;
-
-const App = (props) => {
+export const App = (props) => {
   // const [firstName, setFirstName] = useState("");
   // const [lastName, setLastName] = useState("");
   // const [age, setAge] = useState("");
@@ -176,5 +147,3 @@ const App = (props) => {
     </section>
   );
 };
-
-export default App;
