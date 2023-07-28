@@ -13,9 +13,10 @@ const Picture = styled.div`
 const PersonELement = styled.li`
   display: flex;
   align-items: center;
-  justify-content: space-evenly !important;
+  justify-content: space-between !important;
   border: 1px solid whitesmoke;
-  width: 400px;
+  width: 250px;
+  padding: 5px 15px;
   cursor: pointer;
   transition: 0.4s;
   border-radius: 10px;

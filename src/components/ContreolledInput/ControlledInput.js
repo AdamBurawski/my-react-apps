@@ -11,11 +11,16 @@ export const ControlledInput = (props) => {
 
   const sendForm = (e) => {
     e.preventDefault();
-    console.log(firstName);
+    alert(firstName);
   };
 
+  const notSendingForm = (e) => {
+    e.preventDefault();
+    alert('Adress must contain "@"');
+  };
+  const sendCorrect = firstName[0] === "@" ? sendForm : notSendingForm;
   return (
-    <form onSubmit={sendForm}>
+    <form onSubmit={sendCorrect}>
       <textarea
         type="text"
         name="firstName"
@@ -24,7 +29,7 @@ export const ControlledInput = (props) => {
         style={{ backgroundColor: color }}
       />
       <p>You've entered {firstName.length} characters.</p>
-      {/* <button type="submit">Send</button> */}
+      <button type="submit">Send</button>
     </form>
   );
 };

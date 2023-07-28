@@ -3,6 +3,8 @@ section.projects-list {
   position: relative;
   z-index: 10;
   padding: 50px 0;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 section.projects-list .projects-list-container {
   width: 90%;
@@ -17,15 +19,30 @@ section.projects-list .projects-list-container .projects.txt-container h1 {
   text-align: center;
   color: #4b7e80;
 }
+@media (max-width: 767px) {
+  section.projects-list .projects-list-container .projects.txt-container h1 {
+    font-size: 35px;
+  }
+}
 section.projects-list .projects-list-container h2 {
   font-weight: 400;
-  text-transform: uppercase;
   text-align: center;
-  padding: 0 70px;
+  padding: 0 80px;
   color: #4b7e80;
+}
+@media (max-width: 767px) {
+  section.projects-list .projects-list-container h2 {
+    padding: 0 30px;
+    font-size: 17px;
+  }
 }
 section.projects-list .projects-list-container .list-element {
   padding: 30px;
+}
+@media (max-width: 767px) {
+  section.projects-list .projects-list-container .list-element {
+    padding: 15px;
+  }
 }
 section.projects-list .projects-list-container .list-element:nth-child(odd) {
   background-color: #4b7e80;
@@ -56,6 +73,7 @@ section.projects-list .projects-list-container .list-element .page-content div u
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong {
   cursor: pointer;
@@ -73,6 +91,14 @@ section.projects-list .projects-list-container .list-element .page-content div u
   position: absolute;
   right: 15%;
   text-align: center;
+}
+@media (max-width: 767px) {
+  section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong::before {
+    margin-right: initial;
+    margin-left: 10px;
+    float: right;
+    position: static;
+  }
 }
 section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong.open::before {
   transform: rotate(90deg);
@@ -124,6 +150,14 @@ section.projects-list .projects-list-container .list-element .page-content div u
   background: linear-gradient(45deg, #ffffff, white);
   border-radius: 0% 350% 350% 0%;
   transform: scale(1.5) rotate(180deg);
+}
+@media (max-width: 767px) {
+  .waves::before {
+    width: 30px;
+  }
+  .waves::after {
+    width: 30px;
+  }
 }
 
 button {

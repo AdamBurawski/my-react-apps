@@ -17,9 +17,9 @@ export const ColorBox = (props) => {
         value={backgroundColor}
         onChange={(e) => setBackgroundColor(e.target.value)}
       >
-        <option value="#ff0000">Czerwony</option>
-        <option value="#00ff00">Zielony</option>
-        <option value="#0000ff">Niebieski</option>
+        <option value="#ff0000">Red</option>
+        <option value="#00ff00">Green</option>
+        <option value="#0000ff">Blue</option>
       </select>
       <div>
         <input

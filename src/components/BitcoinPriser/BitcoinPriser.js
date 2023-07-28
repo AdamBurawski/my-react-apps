@@ -31,7 +31,7 @@ export const BitcoinPriser = (props) => {
     <>
       <div>
         {" "}
-        <strong>Aktualna cena Bitcoina to: </strong>
+        <strong>Bitcoin's current price is: </strong>
         <h3>{btcPrice} $</h3>
       </div>
     </>

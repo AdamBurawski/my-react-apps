@@ -105,12 +105,12 @@ const App = (props) => {
       <div className="projects-list-container">
         <div className="projects txt-container">
           <h1>React.js Components</h1>
-          <h2>
-            You can find there a collection of React components designed to
+          <h2 style={{ fontStyle: "italic" }}>
+            "You can find there a collection of React components designed to
             enhance the user interface of web applications. These components are
             thoughtfully crafted to be versatile, efficient, and easily
             integrated into various projects, saving developers time and effort
-            during the development process.
+            during the development process." (A.I.)
           </h2>
         </div>
         <HiddenList
@@ -138,7 +138,7 @@ const App = (props) => {
         <HiddenList
           index="0"
           header="Age guesser"
-          subtitle="Write your name then I'll try guess your age :-)"
+          subtitle="Write your name then I'll try guess your age 😉"
           project={p5[0].p1Txt}
         />
         <HiddenList index="0" header="Login form" project={p6[0].p1Txt} />

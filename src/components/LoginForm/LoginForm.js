@@ -43,10 +43,21 @@ const LoginCorrectBox = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  @media (max-width: 767px) {
+    position: relative;
+    top: 40px;
+    right: initial;
+  }
 `;
 
 const Registration = styled.h1`
   text-align: center;
+`;
+
+const Tip = styled.span`
+  font-size: 16px !important;
+  text-align: center;
+  margin-bottom: 10px;
 `;
 
 const LoginWrapper = styled.div`
@@ -54,7 +65,7 @@ const LoginWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  width: 400px;
+  width: 100%;
   height: 100px;
   background-color: whitesmoke;
   a {
@@ -63,7 +74,7 @@ const LoginWrapper = styled.div`
     justify-content: center;
     transition: 0.4s;
     height: 100%;
-    width: 100%;
+    width: 50%;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
@@ -89,23 +100,19 @@ export const LoginForm = (props) => {
   });
 
   const [logged, setLogged] = useState("none");
-
   const [visibilityReg, setVisibilityReg] = useState("none");
-
   const [visibilityLog, setVisibilityLog] = useState("flex");
-
   const [visibilityOn, setVisibilityOn] = useState("false");
-
   const [bgColor, setBgColor] = useState("");
-
   const [loginTxt, setLoginTxt] = useState("");
-
+  const [loginTxtTip, setLoginTxtTip] = useState("");
+  const [loginTxtTipOn, setLoginTxtTipOn] = useState("none");
   const [isPassword, setIsPassword] = useState(false);
-
   const [colorFullName, setColorFullName] = useState("black");
   const [colorEmail, setColorEmail] = useState("black");
   const [colorPassword, setColorPassword] = useState("black");
   const [colorPasswordRepeat, setColorPasswordRepeat] = useState("black");
+  const [correct, setCorrect] = useState("false");
 
   const sendForm = (e) => {
     e.preventDefault();
@@ -117,14 +124,22 @@ export const LoginForm = (props) => {
         setLogged("flex");
         setBgColor("green");
         setLoginTxt("Logged correctly");
+        setLoginTxtTipOn("block");
+        setLoginTxtTip("Gratulations! How do You know it? 🤔");
       } else {
         setLogged("flex");
         setBgColor("red");
         setLoginTxt("Logged incorrectly");
-        console.log("red");
+        setLoginTxtTipOn("block");
+        setLoginTxtTip("Try login: a@b.c & pw: 1234");
       }
     } else {
       console.log(personReg);
+      if (correct === true) {
+        alert("Your account was registrated correctly");
+      } else {
+        alert("You sholud complete the data first");
+      }
     }
   };
 
@@ -135,33 +150,61 @@ export const LoginForm = (props) => {
     }));
 
     setLogged("none");
+    setLoginTxtTipOn("none");
   };
 
   const changeReg = (e) => {
-    setPersonReg((personReg) => ({
-      ...personReg,
-      [e.target.name]: e.target.value,
+    const { name, value } = e.target;
+
+    setPersonReg((prevPersonReg) => ({
+      ...prevPersonReg,
+      [name]: value,
     }));
 
-    if (personReg.fullName.length < 2) {
-      setColorFullName("red");
+    if (name === "passwordRepeat") {
+      if (value === personReg.password) {
+        setColorPasswordRepeat("black");
+        setCorrect(true);
+        console.log(personReg.email.value);
+      } else {
+        setColorPasswordRepeat("red");
+        setCorrect(false);
+      }
     } else {
-      setColorFullName("black");
+      if (name === "fullName") {
+        if (value.length < 3) {
+          setColorFullName("red");
+          setCorrect(false);
+        } else {
+          setColorFullName("black");
+          setCorrect(true);
+        }
+      } else if (name === "email") {
+        if (name === "email" && !value.includes("@")) {
+          setColorEmail("red");
+          setCorrect(false);
+        } else {
+          // Reset the color to black when "@" is present in the value or for other fields
+          setColorEmail("black");
+          setCorrect(true);
+        }
+      } else if (name === "password") {
+        if (value.length < 8) {
+          setColorPassword("red");
+          setCorrect(false);
+        } else {
+          setColorPassword("black");
+          setCorrect(true);
+        }
+      }
     }
 
-    if (personReg.password.length < 7) {
-      setColorPassword("red");
-    } else {
-      setColorPassword("black");
-    }
-    console.log(personReg.password, personReg.passwordRepeat);
     if (
-      personReg.passwordRepeat === personReg.password &&
-      personReg.passwordRepeat.length - 1 === personReg.password.length - 1
+      personReg.email === "" ||
+      personReg.password === "" ||
+      personReg.passwordRepeat === ""
     ) {
-      setColorPasswordRepeat("black");
-    } else {
-      setColorPasswordRepeat("red");
+      setCorrect(false);
     }
 
     setLogged("none");
@@ -175,6 +218,8 @@ export const LoginForm = (props) => {
       setVisibilityLog("none");
       setLogged("none");
       setVisibilityOn("true");
+      setLoginTxtTipOn("block");
+      setLoginTxtTip("Fulfill the fields. Only black color is correct");
     }
   };
   const showLogin = (e) => {
@@ -184,6 +229,7 @@ export const LoginForm = (props) => {
       setVisibilityLog("flex");
       //   setLogged("none");
       setVisibilityOn("false");
+      setLoginTxtTip("Try to login");
     }
   };
 
@@ -198,14 +244,14 @@ export const LoginForm = (props) => {
     <>
       <LoginWrapper>
         <a href="#" onClick={showLogin}>
-          logowanie
+          login
         </a>
         <a href="#" onClick={showRegistration}>
-          rejestracja
+          registration
         </a>
       </LoginWrapper>
       <Registration style={{ display: `${visibilityReg}` }}>
-        Rejestracja
+        Registration
       </Registration>
       <FormWrapper>
         <LoginCorrectBox
@@ -213,6 +259,7 @@ export const LoginForm = (props) => {
         >
           <span>{loginTxt}</span>
         </LoginCorrectBox>
+        <Tip style={{ display: `${loginTxtTipOn}` }}>{loginTxtTip}</Tip>
         <form style={{ display: `${visibilityLog}` }} onSubmit={sendForm}>
           <p>
             <label>
@@ -251,7 +298,7 @@ export const LoginForm = (props) => {
           <p>
             <label>
               <input
-                placeholder="full name"
+                placeholder="full name (min 3 ch.)"
                 type="text"
                 value={personReg.fullName}
                 name="fullName"
@@ -263,7 +310,7 @@ export const LoginForm = (props) => {
           <p>
             <label>
               <input
-                placeholder="e-mail"
+                placeholder="e-mail (must contain @)"
                 type="text"
                 value={personReg.email}
                 name="email"
@@ -275,7 +322,7 @@ export const LoginForm = (props) => {
           <p>
             <label>
               <input
-                placeholder="password"
+                placeholder="password (min 8 ch.)"
                 type="text"
                 value={personReg.password}
                 name="password"

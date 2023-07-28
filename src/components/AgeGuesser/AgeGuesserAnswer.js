@@ -22,13 +22,13 @@ export const AgeGuesserAnswer = (props) => {
   }
 
   if (age === null) {
-    return <p>Wczytywanie...</p>;
+    return <p>Loading...</p>;
   }
 
   return (
     <>
-      <p>Twój wiek: {age}</p>
-      <p>Twoja data urodzenia: {new Date().getFullYear() - age} </p>
+      <p>Your Age: {age}</p>
+      <p>Yur date of birth: {new Date().getFullYear() - age} </p>
     </>
   );
 };

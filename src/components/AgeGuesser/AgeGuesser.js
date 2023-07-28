@@ -17,13 +17,13 @@ export const AgeGuesser = (props) => {
   return (
     <form onSubmit={sendForm}>
       <label className="age-guesser-label" htmlFor="">
-        Podaj imię: <br />
+        Your Name: <br />
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button>Zgadnij mój wiek!</button>
+        <button>Guess my age!</button>
       </label>
     </form>
   );
