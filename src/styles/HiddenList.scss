@@ -1,3 +1,7 @@
+body {
+  background-color: #2e2e2e;
+}
+
 section.projects-list {
   // background-color: black;
   // color: white;
@@ -16,7 +20,7 @@ section.projects-list {
         font-size: 48px;
         text-transform: uppercase;
         text-align: center;
-        color: #4b7e80;
+        color: #ac7aff;
         @media (max-width: 767px) {
           font-size: 35px;
         }
@@ -27,7 +31,7 @@ section.projects-list {
       font-weight: 400;
       text-align: center;
       padding: 0 80px;
-      color: #4b7e80;
+      color: white;
       @media (max-width: 767px) {
         padding: 0 30px;
         font-size: 17px;
@@ -39,7 +43,7 @@ section.projects-list {
         padding: 15px;
       }
       &:nth-child(odd) {
-        background-color: #4b7e80;
+        background-color: #ac7aff;
         div {
           ul {
             li {
@@ -52,7 +56,7 @@ section.projects-list {
         div {
           ul {
             li {
-              color: #4b7e80;
+              color: #ac7aff;
             }
           }
         }
@@ -71,7 +75,7 @@ section.projects-list {
             // padding: 15px;
             li {
               display: flex;
-              justify-content: center;
+              justify-content: center !important;
               // border-bottom: 1px solid white;
               // padding: 15px;
 
@@ -148,7 +152,7 @@ section.projects-list {
     left: 0;
     width: 100px;
     height: 100vh;
-    background: linear-gradient(45deg, #ffffff, white);
+    background: linear-gradient(45deg, #2e2e2e, #2e2e2e);
     border-radius: 0% 350% 350% 0%;
     transform: scale(1.5);
   }
@@ -161,7 +165,7 @@ section.projects-list {
     width: 100px;
     height: 100vh;
     z-index: 11;
-    background: linear-gradient(45deg, #ffffff, white);
+    background: linear-gradient(45deg, #2e2e2e, #2e2e2e);
     border-radius: 0% 350% 350% 0%;
     transform: scale(1.5) rotate(180deg);
   }
@@ -179,17 +183,17 @@ button {
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: orange;
-  color: white;
+  background-color: #e5cc63;
+  color: #2e2e2e;
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.4s;
-  border: 1px solid white;
+  border: 1px solid #2d2d2d;
   cursor: pointer;
   &:hover {
     background-color: white;
-    color: orange;
-    border: 1px solid orange;
+    color: #2e2e2e;
+    border: 1px solid #e5cc63;
   }
 }
 

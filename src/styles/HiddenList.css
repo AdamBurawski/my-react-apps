@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  background-color: #2e2e2e;
+}
+
 section.projects-list {
   position: relative;
   z-index: 10;
@@ -17,7 +21,7 @@ section.projects-list .projects-list-container .projects.txt-container h1 {
   font-size: 48px;
   text-transform: uppercase;
   text-align: center;
-  color: #4b7e80;
+  color: #ac7aff;
 }
 @media (max-width: 767px) {
   section.projects-list .projects-list-container .projects.txt-container h1 {
@@ -28,7 +32,7 @@ section.projects-list .projects-list-container h2 {
   font-weight: 400;
   text-align: center;
   padding: 0 80px;
-  color: #4b7e80;
+  color: white;
 }
 @media (max-width: 767px) {
   section.projects-list .projects-list-container h2 {
@@ -45,13 +49,13 @@ section.projects-list .projects-list-container .list-element {
   }
 }
 section.projects-list .projects-list-container .list-element:nth-child(odd) {
-  background-color: #4b7e80;
+  background-color: #ac7aff;
 }
 section.projects-list .projects-list-container .list-element:nth-child(odd) div ul li {
   color: white;
 }
 section.projects-list .projects-list-container .list-element:nth-child(even) div ul li {
-  color: #4b7e80;
+  color: #ac7aff;
 }
 section.projects-list .projects-list-container .list-element .page-content {
   text-align: center;
@@ -67,7 +71,7 @@ section.projects-list .projects-list-container .list-element .page-content div u
 }
 section.projects-list .projects-list-container .list-element .page-content div ul li {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
 }
 section.projects-list .projects-list-container .list-element .page-content div ul li div {
   display: flex;
@@ -134,7 +138,7 @@ section.projects-list .projects-list-container .list-element .page-content div u
   left: 0;
   width: 100px;
   height: 100vh;
-  background: linear-gradient(45deg, #ffffff, white);
+  background: linear-gradient(45deg, #2e2e2e, #2e2e2e);
   border-radius: 0% 350% 350% 0%;
   transform: scale(1.5);
 }
@@ -147,7 +151,7 @@ section.projects-list .projects-list-container .list-element .page-content div u
   width: 100px;
   height: 100vh;
   z-index: 11;
-  background: linear-gradient(45deg, #ffffff, white);
+  background: linear-gradient(45deg, #2e2e2e, #2e2e2e);
   border-radius: 0% 350% 350% 0%;
   transform: scale(1.5) rotate(180deg);
 }
@@ -164,21 +168,21 @@ button {
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: orange;
-  color: white;
+  background-color: #e5cc63;
+  color: #2e2e2e;
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.4s;
-  border: 1px solid white;
+  border: 1px solid #2d2d2d;
   cursor: pointer;
 }
 button:hover {
   background-color: white;
-  color: orange;
-  border: 1px solid orange;
+  color: #2e2e2e;
+  border: 1px solid #e5cc63;
 }
 
 form {
   display: flex;
   flex-direction: column;
-}/*# sourceMappingURL=hiddenList.css.map */
+}/*# sourceMappingURL=HiddenList.css.map */

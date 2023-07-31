@@ -21,13 +21,17 @@ const PersonELement = styled.li`
   transition: 0.4s;
   border-radius: 10px;
   &:hover {
-    background-color: yellow;
+    background-color: #e5cc63;
+    p {
+      color: #2d2d2d;
+    }
   }
   p {
     display: inline-block;
     margin-left: 5px;
     margin-top: 3px;
     margin-bottom: 3px;
+    color: white;
   }
 `;
 

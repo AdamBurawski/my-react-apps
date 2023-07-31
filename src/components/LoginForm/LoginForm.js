@@ -17,7 +17,7 @@ const FormWrapper = styled.div`
     padding: 20px 40px;
   }
   input {
-    background-color: yellow;
+    background-color: #e5cc63;
     border-radius: 5px;
     border: none;
   }
@@ -125,7 +125,7 @@ export const LoginForm = (props) => {
         setBgColor("green");
         setLoginTxt("Logged correctly");
         setLoginTxtTipOn("block");
-        setLoginTxtTip("Gratulations! How do You know it? 🤔");
+        setLoginTxtTip("Congratulations! How did you know that? 🤔");
       } else {
         setLogged("flex");
         setBgColor("red");

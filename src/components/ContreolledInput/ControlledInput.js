@@ -7,7 +7,7 @@ export const ControlledInput = (props) => {
     setFirstName(e.target.value);
   };
 
-  const color = firstName[0] === "@" ? "green" : "red";
+  const color = firstName[0] === "@" ? "green" : "rgb(251,116, 116";
 
   const sendForm = (e) => {
     e.preventDefault();
