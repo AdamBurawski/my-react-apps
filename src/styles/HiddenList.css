@@ -73,11 +73,46 @@ section.projects-list .projects-list-container .list-element .page-content div u
   display: flex;
   justify-content: center !important;
 }
-section.projects-list .projects-list-container .list-element .page-content div ul li div {
+section.projects-list .projects-list-container .list-element .page-content div ul li .element {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li .element .rick-and-morthy-component .row {
+  display: flex;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li .element .rick-and-morthy-component .pagination {
+  position: absolute;
+  left: 50%;
+  bottom: -33px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  min-width: 250px;
+  padding: 5px 10px;
+  background-color: darkred;
+  border-radius: 5px;
+}
+@media (max-width: 767px) {
+  section.projects-list .projects-list-container .list-element .page-content div ul li .element .rick-and-morthy-component .pagination {
+    bottom: 40px;
+  }
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li .element .rick-and-morthy-component .pagination li {
+  cursor: pointer;
+  visibility: visible !important;
+  height: initial !important;
+  opacity: 1 !important;
+  color: white;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li .element .rick-and-morthy-component .pagination .page-item.active {
+  font-weight: bold;
+}
+section.projects-list .projects-list-container .list-element .page-content div ul li .element .rick-and-morthy-component .pagination .page-item.active a {
+  color: black;
 }
 section.projects-list .projects-list-container .list-element .page-content div ul li:nth-child(odd) strong {
   cursor: pointer;
@@ -137,6 +172,7 @@ section.projects-list .projects-list-container .list-element .page-content div u
   top: 0;
   left: 0;
   width: 100px;
+  z-index: 1;
   height: 100vh;
   background: linear-gradient(45deg, #2e2e2e, #2e2e2e);
   border-radius: 0% 350% 350% 0%;

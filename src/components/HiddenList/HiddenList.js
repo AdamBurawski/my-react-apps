@@ -31,7 +31,7 @@ export function HiddenList(props) {
               </li>
               <li className={activeIndex === index ? "open" : ""}>
                 <p>{subtitle}</p>
-                <div>{project}</div>
+                <div className="element">{project}</div>
               </li>
             </ul>
           </div>

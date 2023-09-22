@@ -21,6 +21,7 @@ import { AgeGuesser } from "./components/AgeGuesser/AgeGuesser";
 import { BitcoinPriser } from "./components/BitcoinPriser/BitcoinPriser";
 import { FakeUsersList } from "./components/FakeUsersList/FakeUsersList";
 import { HiddenList } from "./components/HiddenList/HiddenList.js";
+import { RickAndMorthyCharaktersList } from "./components/RickAndMorthyCharaktersList/RickAndMorthyCharaktersList";
 
 //   **1
 // const query = prompt("podaj szerokość: ");
@@ -58,44 +59,50 @@ export const App = (props) => {
 
   const p1 = [
     {
-      p1Txt: <Square />,
+      p1: <Square />,
     },
   ];
   const p2 = [
     {
-      p1Txt: <ColorBox />,
+      p1: <ColorBox />,
     },
   ];
   const p3 = [
     {
-      p1Txt: <AnimatedProgressbar />,
+      p1: <AnimatedProgressbar />,
     },
   ];
 
   const p4 = [
     {
-      p1Txt: <ControlledInput />,
+      p1: <ControlledInput />,
     },
   ];
 
   const p5 = [
     {
-      p1Txt: <AgeGuesser />,
+      p1: <AgeGuesser />,
     },
   ];
   const p6 = [
     {
-      p1Txt: <LoginForm />,
+      p1: <LoginForm />,
     },
   ];
   const p7 = [
     {
-      p1Txt: <FakeUsersList />,
+      p1: <FakeUsersList />,
     },
   ];
   const p8 = [
     {
-      p1Txt: <BitcoinPriser />,
+      p1: <BitcoinPriser />,
+    },
+  ];
+
+  const p9 = [
+    {
+      p1: <RickAndMorthyCharaktersList />,
     },
   ];
 
@@ -115,35 +122,40 @@ export const App = (props) => {
         </div>
         <HiddenList
           index="0"
+          header="Rick & Morty Charakters List (fetch)"
+          project={p9[0].p1}
+        />
+        <HiddenList
+          index="0"
           header="Changing color square"
-          project={p1[0].p1Txt}
+          project={p1[0].p1}
         />
         <HiddenList
           index="0"
           header="Changing color square 2"
-          project={p2[0].p1Txt}
+          project={p2[0].p1}
         />
         <HiddenList
           onCLick=""
           index="0"
           header="Progressbar"
-          project={p3[0].p1Txt}
+          project={p3[0].p1}
         />
         <HiddenList
           index="0"
           subtitle="You sholud start write with @"
           header="Controlled input"
-          project={p4[0].p1Txt}
+          project={p4[0].p1}
         />
         <HiddenList
           index="0"
           header="Age guesser"
           subtitle="Write your name then I'll try guess your age 😉"
-          project={p5[0].p1Txt}
+          project={p5[0].p1}
         />
-        <HiddenList index="0" header="Login form" project={p6[0].p1Txt} />
-        <HiddenList index="0" header="Fake user list" project={p7[0].p1Txt} />
-        <HiddenList index="0" header="Bitcoin Priser" project={p8[0].p1Txt} />
+        <HiddenList index="0" header="Login form" project={p6[0].p1} />
+        <HiddenList index="0" header="Fake user list" project={p7[0].p1} />
+        <HiddenList index="0" header="Bitcoin Priser" project={p8[0].p1} />
       </div>
 
       {/* <ListView list={DataBase} /> */}
