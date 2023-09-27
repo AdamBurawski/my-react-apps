@@ -17,10 +17,10 @@ export const RickAndMorthyCharaktersList = () => {
 
   return (
     <div className="rick-and-morthy-component">
-      <h1 className="text-center mb-3">Characters</h1>
+      <h1 className="text-center">Characters</h1>
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 col-12">
+          <div>
             <div className="row">
               <Card results={results} />
             </div>

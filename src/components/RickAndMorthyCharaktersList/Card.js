@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export const Card = ({ results }) => {
   let display;
 
   if (results) {
     if (results) {
-      display = results.map((x) => {
-        let { id, image, name } = x;
+      display = results.map((element) => {
+        let { id, image, name } = element;
 
         return (
-          <div
-            key={id}
-            className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
-          >
+          <div key={id}>
             <div>
               <img src={image} alt="" />
               <div>
-                <div className="fs-5 fw-bold mb-4">{name}</div>
-                <div className=""></div>
+                <div>{name}</div>
               </div>
             </div>
           </div>

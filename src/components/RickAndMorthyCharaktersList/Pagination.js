@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactPaginate from "react-paginate";
 
 export const Pagination = ({ pageNumber, info, updatePageNumber }) => {
@@ -31,7 +31,6 @@ export const Pagination = ({ pageNumber, info, updatePageNumber }) => {
         activeClassName="active"
         pageClassName="page-item"
         pageLinkClassName="page-link"
-        //.... other props here
       />
     </>
   );
